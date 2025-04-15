@@ -2,11 +2,6 @@
 
 namespace DmitryBubyakin\NovaMedialibraryField;
 
-function value($value)
-{
-    return is_callable($value) ? $value() : $value;
-}
-
 function call_or_default(?callable $callback, array $args = [], $default = null)
 {
     return is_callable($callback)
