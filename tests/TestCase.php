@@ -96,7 +96,7 @@ abstract class TestCase extends Orchestra
 
         Nova::$resources = array_filter(Nova::$resources);
 
-        event(new ServingNova(Request::create('/')));
+        event(new ServingNova($app, Request::create('/')));
     }
 
     protected function setUpTestFiles($app): void
