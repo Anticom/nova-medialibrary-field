@@ -10,9 +10,6 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-/**
- * @method static self make()
- */
 class TransientModel extends Model implements HasMedia
 {
     use InteractsWithMedia;
@@ -83,7 +80,7 @@ class TransientModel extends Model implements HasMedia
 
         $model = new $modelClassName;
 
-        $model->registerAllMediaConversions($media);
+        $model->registerAllMediaConversions();
 
         $this->mediaConversions = $model->mediaConversions;
         $this->mediaCollections = $model->mediaCollections;
