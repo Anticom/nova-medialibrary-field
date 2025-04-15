@@ -23,7 +23,7 @@
     "require": {
         "php": "^8.2",
         "spatie/laravel-medialibrary": "^11.0",
-        "spatie/laravel-data": "^3.0"
+        "spatie/laravel-data": "^3.0|^4.0"
     },
     "require-dev": {
         "laravel/nova": "^5.0",
