@@ -4,7 +4,7 @@
       <div class="dragging:hidden bg-overlay absolute inset-0 hidden rounded-b group-hover:block">
         <div class="flex h-full items-center justify-center">
           <a :href="media.downloadUrl" target="_blank" class="media-item-download text-white">
-            <Icon type="download" view-box="0 0 24 24" width="32" height="32" />
+            <Icon name="download" class="icon-xl" />
           </a>
         </div>
       </div>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { Icon } from 'laravel-nova-ui'
 import { tooltip } from './Utils'
 
 import MediaListItemActions from './MediaListItemActions'
@@ -34,6 +35,7 @@ import MediaListItemModals from './MediaListItemModals'
 
 export default {
   components: {
+    Icon,
     MediaListItemActions,
     MediaListItemPreview,
     MediaListItemModals,

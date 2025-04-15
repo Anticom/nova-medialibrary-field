@@ -66,7 +66,7 @@
         </div>
 
         <div class="ml-auto flex items-center">
-          <CancelButton component="button" type="button" class="ml-auto mr-3" @click="$emit('close')" />
+          <Button variant="link" state="mellow" class="ml-auto mr-3" @click="$emit('close')">{{ __('Cancel') }}</Button>
 
           <loading-button
             type="button"
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { Button } from 'laravel-nova-ui'
 import VueCropper from 'vue-cropperjs'
 import { PreventsModalAbandonment } from 'laravel-nova'
 
@@ -92,6 +93,7 @@ import 'cropperjs/dist/cropper.css'
 
 export default {
   components: {
+    Button,
     VueCropper,
   },
 

@@ -26,13 +26,14 @@
         class="flex h-full w-full items-center justify-center focus:outline-none"
         @click="$emit(chosen ? 'unchoose' : 'choose')"
       >
-        <icon v-if="chosen" width="40" height="40" type="check-circle" class="text-white" />
+        <Icon v-if="chosen" name="check-circle" class="icon-2xl text-white" />
       </button>
     </div>
   </div>
 </template>
 
 <script>
+import { Icon } from 'laravel-nova-ui'
 import { tooltip } from './Utils'
 import MediaPreview from './MediaPreview'
 
@@ -40,6 +41,7 @@ export default {
   emits: ['choose', 'unchoose'],
 
   components: {
+    Icon,
     MediaPreview,
   },
 
