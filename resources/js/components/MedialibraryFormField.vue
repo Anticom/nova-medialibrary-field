@@ -28,9 +28,10 @@ export default {
       formData.append(this.field.attribute, this.value || '')
     },
 
-    handleChange(value) {
-      this.value = value
-    },
+    // FIXME: Why is this needed? --> Remove?
+    // handleChange(value) {
+    //   this.value = value
+    // },
   },
 }
 </script>
