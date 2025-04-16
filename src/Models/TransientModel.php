@@ -80,7 +80,7 @@ class TransientModel extends Model implements HasMedia
 
         $model = new $modelClassName;
 
-        $model->registerAllMediaConversions();
+        $model->registerAllMediaConversions($media);
 
         $this->mediaConversions = $model->mediaConversions;
         $this->mediaCollections = $model->mediaCollections;
