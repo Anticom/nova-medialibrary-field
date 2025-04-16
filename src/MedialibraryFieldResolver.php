@@ -25,8 +25,8 @@ class MedialibraryFieldResolver
 
     public function __construct(
         NovaRequest $request,
-        Resource $resource = null,
-        string $attribute = null,
+        ?Resource $resource = null,
+        ?string $attribute = null,
     )
     {
         $this->request = $request;

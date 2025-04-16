@@ -136,7 +136,7 @@ abstract class TestCase extends Orchestra
         return TestPost::create();
     }
 
-    public function createPostWithMedia($media = 1, string $collectionName = 'default', string $file = null): TestPost
+    public function createPostWithMedia($media = 1, string $collectionName = 'default', ?string $file = null): TestPost
     {
         $post = $this->createPost();
 

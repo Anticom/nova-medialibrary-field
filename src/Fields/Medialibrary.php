@@ -70,7 +70,7 @@ class Medialibrary extends Field
         string $name,
         string $collectionName = '',
         string $diskName = '',
-        string $attribute = null,
+        ?string $attribute = null,
     )
     {
         parent::__construct($name, $attribute);

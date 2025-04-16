@@ -70,7 +70,7 @@ class TransientModel extends Model implements HasMedia
         ]);
     }
 
-    public function registerAllMediaConversions(Media $media = null): void
+    public function registerAllMediaConversions(?Media $media = null): void
     {
         [$modelClassName, $collectionName] = $this->getCustomPropertyValue($media);
 
