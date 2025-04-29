@@ -43,8 +43,9 @@ export default class Media {
   }
 
   get singularLabel() {
-    // FIXME: This looks sus. What are we trying to retrieve here exactly?
-    return Nova.config('resources').find((resource) => resource.uriKey == resource.uriKey).singularLabel;
+    return Nova.config('resources')
+      .find((resource) => resource.uriKey == this.resourceName)
+      .singularLabel;
   }
 
   get fields() {
