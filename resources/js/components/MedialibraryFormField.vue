@@ -27,11 +27,6 @@ export default {
     fill(formData) {
       formData.append(this.field.attribute, this.value || '')
     },
-
-    // FIXME: Why is this needed? --> Remove?
-    // handleChange(value) {
-    //   this.value = value
-    // },
   },
 }
 </script>
