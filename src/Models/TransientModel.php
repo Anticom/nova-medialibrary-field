@@ -10,9 +10,6 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-/**
- * @method static self make()
- */
 class TransientModel extends Model implements HasMedia
 {
     use InteractsWithMedia;
@@ -73,7 +70,7 @@ class TransientModel extends Model implements HasMedia
         ]);
     }
 
-    public function registerAllMediaConversions(Media $media = null): void
+    public function registerAllMediaConversions(?Media $media = null): void
     {
         [$modelClassName, $collectionName] = $this->getCustomPropertyValue($media);
 

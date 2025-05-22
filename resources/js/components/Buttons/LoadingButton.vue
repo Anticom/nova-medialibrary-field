@@ -40,7 +40,7 @@ export default {
 
     component: {
       type: String,
-      default: 'DefaultButton',
+      default: 'button',
     },
   },
 

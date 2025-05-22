@@ -31,7 +31,9 @@
       </ModalContent>
       <ModalFooter>
         <div class="ml-auto">
-          <CancelButton component="button" type="button" class="ml-auto mr-3" @click="$emit('close')" />
+          <Button variant="link" state="mellow" class="ml-auto mr-3" @click="$emit('close')">
+            {{ __('Cancel') }}
+          </Button>
           <loading-button type="button" :disabled="loading" :loading="loading" ref="confirmButton" @click="handleChoose">
             {{ __('Choose') }}
             <span v-if="chosenMedia.length > 0"> ({{ chosenMedia.length }}) </span>
@@ -43,19 +45,17 @@
 </template>
 
 <script>
+import { Button } from 'laravel-nova-ui'
 import PaginationButton from '../PaginationButton'
 import ChooseExistingMediaList from '../ChooseExistingMediaList'
-import IndexSearchInput from '../../../../../vendor/laravel/nova/resources/js/components/Inputs/IndexSearchInput.vue'
-import ModalContent from '../../../../../vendor/laravel/nova/resources/js/components/Modals/ModalContent.vue'
 
 export default {
   emits: ['choose', 'close'],
 
   components: {
+    Button,
     PaginationButton,
     ChooseExistingMediaList,
-    IndexSearchInput,
-    ModalContent,
   },
 
   props: {

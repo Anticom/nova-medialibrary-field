@@ -96,7 +96,7 @@ abstract class TestCase extends Orchestra
 
         Nova::$resources = array_filter(Nova::$resources);
 
-        event(new ServingNova(Request::create('/')));
+        event(new ServingNova($app, Request::create('/')));
     }
 
     protected function setUpTestFiles($app): void
@@ -136,7 +136,7 @@ abstract class TestCase extends Orchestra
         return TestPost::create();
     }
 
-    public function createPostWithMedia($media = 1, string $collectionName = 'default', string $file = null): TestPost
+    public function createPostWithMedia($media = 1, string $collectionName = 'default', ?string $file = null): TestPost
     {
         $post = $this->createPost();
 

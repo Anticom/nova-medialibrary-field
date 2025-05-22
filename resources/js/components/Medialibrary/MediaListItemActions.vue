@@ -2,11 +2,11 @@
   <div class="flex items-center justify-between px-2 py-1">
     <div class="flex items-center">
       <button v-if="canView" type="button" class="flex hover:opacity-50 focus:outline-none" @click="media.view()">
-        <Icon type="eye" width="18" height="18" />
+        <Icon name="eye" class="icon-sm" />
       </button>
 
       <button v-if="canEdit" type="button" class="ml-2 flex hover:opacity-50 focus:outline-none" @click="media.edit()">
-        <Icon type="pencil-alt" width="18" height="18" />
+        <Icon name="pencil-alt" class="icon-sm" />
       </button>
 
       <button
@@ -15,13 +15,13 @@
         class="ml-2 flex hover:opacity-50 focus:outline-none"
         @click="media.openDeleteModal()"
       >
-        <Icon type="trash" width="18" height="18" />
+        <Icon name="trash" class="icon-sm" />
       </button>
     </div>
 
     <Dropdown placement="bottom-start" class="btn-block place-self-end">
       <DropdownTrigger :show-arrow="false" class="h-6 w-6 hover:opacity-50">
-        <Icon :solid="true" type="dots-horizontal" view-box="0 0 24 24" width="18" height="18" />
+        <Icon name="dots-horizontal" type="solid" class="icon-sm" />
       </DropdownTrigger>
 
       <template #menu>
@@ -33,7 +33,7 @@
               @click="doCopy($event, 'downloadUrl')"
               class="flex py-1 hover:bg-gray-100"
             >
-              <Icon type="clipboard-copy" width="20" height="20" />
+              <Icon name="clipboard-copy" class="icon-md" />
               <span class="ml-2">{{ __('Copy Url') }}</span>
             </DropdownMenuItem>
 
@@ -44,7 +44,7 @@
               :key="copyAs.as"
               @click="doCopy($event, copyAs.as)"
             >
-              <Icon :type="copyAs.icon" width="20" height="20" />
+              <Icon :name="copyAs.icon" class="icon-md" />
               <span class="ml-2">{{ __(`Copy as ${copyAs.as}`) }}</span>
             </DropdownMenuItem>
 
@@ -64,7 +64,7 @@
               class="flex items-center hover:bg-gray-100"
               @click="media.regenerate()"
             >
-              <Icon type="refresh" />
+              <Icon name="refresh" />
               <span class="ml-2">{{ __('Regenerate') }}</span>
             </DropdownMenuItem>
           </div>
@@ -75,9 +75,14 @@
 </template>
 
 <script>
+import { Icon } from 'laravel-nova-ui'
 import { context } from './Context'
 
 export default {
+  components: {
+    Icon,
+  },
+
   props: {
     media: {
       type: Object,

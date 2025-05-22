@@ -7,6 +7,7 @@ namespace DmitryBubyakin\NovaMedialibraryField;
 use DmitryBubyakin\NovaMedialibraryField\Resources\Media;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 
 class FieldServiceProvider extends ServiceProvider
@@ -33,9 +34,8 @@ class FieldServiceProvider extends ServiceProvider
 
     private function publishNovaResources(): void
     {
-        Nova::serving(function (): void {
-            Nova::script('nova-medialibrary-field', __DIR__ . '/../dist/js/field.js');
-            Nova::style('nova-medialibrary-field', __DIR__ . '/../dist/css/field.css');
+        Nova::serving(function (ServingNova $event): void {
+            Nova::mix('nova-medialibrary-field', __DIR__.'/../dist/mix-manifest.json');
 
             Media::$model = config('media-library.media_model');
 

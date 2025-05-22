@@ -21,7 +21,7 @@ class TestPost extends Model implements HasMedia
             ->singleFile();
     }
 
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
         if (! static::$withConversions) {
             return;

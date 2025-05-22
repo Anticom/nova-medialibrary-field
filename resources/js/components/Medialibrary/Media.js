@@ -43,9 +43,9 @@ export default class Media {
   }
 
   get singularLabel() {
-    return _.find(Nova.config('resources'), (resource) => {
-      return resource.uriKey == this.resourceName
-    }).singularLabel
+    return Nova.config('resources')
+      .find((resource) => resource.uriKey == this.resourceName)
+      .singularLabel;
   }
 
   get fields() {

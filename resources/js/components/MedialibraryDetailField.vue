@@ -1,5 +1,5 @@
 <template>
-  <PanelItem :field="field">
+  <PanelItem :index="index" :field="field">
     <template #value>
       <MedialibraryField
         :add-files="canAddFiles"
@@ -19,7 +19,7 @@ export default {
     MedialibraryField,
   },
 
-  props: ['resource', 'resourceName', 'resourceId', 'field'],
+  props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],
 
   computed: {
     canAddFiles() {

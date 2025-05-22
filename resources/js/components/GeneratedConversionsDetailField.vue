@@ -12,7 +12,7 @@
           <div class="bg-overlay absolute inset-0 hidden group-hover:block">
             <div class="flex h-full items-center justify-center">
               <button type="button" class="hover:text-primary flex text-white focus:outline-none" @click="doCopy(url)">
-                <icon type="link" view-box="0 0 20 20" width="20" height="20" />
+                <Icon name="link" class="icon-md" />
               </button>
             </div>
           </div>
@@ -24,9 +24,14 @@
 
 <script>
 import { Localization } from 'laravel-nova'
+import { Icon } from 'laravel-nova-ui'
 import Clipboard from 'clipboard'
 
 export default {
+  components: {
+    Icon,
+  },
+
   props: ['resource', 'resourceName', 'resourceId', 'field'],
 
   computed: {
